@@ -12,18 +12,39 @@
     />
     <link rel="stylesheet" href="style.css" />
     <title>Register</title>
+    <script>
+      function validateForm() {
+        // Ambil nilai input
+        var username = document.getElementById("username").value;
+        var email = document.getElementById("email").value;
+        var password = document.getElementById("password").value;
+        var confirmPassword = document.getElementById("confirmPassword").value;
+
+        // Cek apakah semua field sudah terisi
+        if (
+          username === "" ||
+          email === "" ||
+          password === "" ||
+          confirmPassword === ""
+        ) {
+          alert("Silahkan isi semua field terlebih dahulu.");
+        } else {
+          // Tampilkan pesan berhasil
+          alert("Registrasi telah berhasil, silahkan login!");
+          // Redirect ke halaman login
+          window.location.href = "index.html";
+        }
+      }
+    </script>
   </head>
   <body>
     <!----------------------- Main Container -------------------------->
-
     <div
       class="container d-flex justify-content-center align-items-center min-vh-100"
     >
       <!----------------------- Register Container -------------------------->
-
       <div class="row border rounded-5 p-3 bg-white shadow box-area">
         <!--------------------------- Left Box ----------------------------->
-
         <div
           class="col-md-6 rounded-4 d-flex justify-content-center align-items-center flex-column left-box"
           style="background: #103cbe"
@@ -43,12 +64,11 @@
           <small
             class="text-white text-wrap text-center"
             style="width: 17rem; font-family: 'Courier New', Courier, monospace"
-            >Silahkan daftar untuk melihat portofolio.</small
           >
+            Silahkan daftar untuk melihat portofolio.
+          </small>
         </div>
-
-        <!-------------------- ------ Right Box ---------------------------->
-
+        <!------------------------ Right Box ----------------------------->
         <div class="col-md-6 right-box">
           <div class="row align-items-center">
             <div class="header-text mb-4">
@@ -58,6 +78,7 @@
             <div class="input-group mb-3">
               <input
                 type="text"
+                id="username"
                 class="form-control form-control-lg bg-light fs-6"
                 placeholder="Username"
                 required
@@ -66,6 +87,7 @@
             <div class="input-group mb-3">
               <input
                 type="email"
+                id="email"
                 class="form-control form-control-lg bg-light fs-6"
                 placeholder="Email"
                 required
@@ -74,6 +96,7 @@
             <div class="input-group mb-1">
               <input
                 type="password"
+                id="password"
                 class="form-control form-control-lg bg-light fs-6"
                 placeholder="Password"
                 required
@@ -82,6 +105,7 @@
             <div class="input-group mb-1">
               <input
                 type="password"
+                id="confirmPassword"
                 class="form-control form-control-lg bg-light fs-6"
                 placeholder="Confirm Password"
                 required
@@ -90,16 +114,16 @@
             <div class="input-group mb-3">
               <button
                 class="btn btn-lg btn-primary w-100 fs-6"
-                onclick="window.location.href='/tugas-e-learning-pemogramanwebsite-pertemuan-ke-5/dashboard/index.html'"
+                onclick="validateForm()"
               >
                 Register
               </button>
             </div>
             <div class="mb-2 text-center">
-              <small class="text-secondary"
-                >Already have an account?
-                <a href="index.html" class="text-primary">Login here</a></small
-              >
+              <small class="text-secondary">
+                Already have an account?
+                <a href="index.html" class="text-primary">Login here</a>
+              </small>
             </div>
           </div>
         </div>
